@@ -1,0 +1,41 @@
+{
+  "V1_dense_all_families_n4_L2": {
+    "max_abs_diff": 3.885780586188048e-16,
+    "pass_": true
+  },
+  "V2_two_qubit_gates_any_qubit_order": {
+    "max_abs_diff": 2.482534153247273e-16,
+    "pass_": true
+  },
+  "V3_gates_equal_matrix_exponentials": {
+    "max_abs_diff": 2.2887833992611187e-16,
+    "pass_": true
+  },
+  "V4_zz_reupload_equals_stage1_3_simulator": {
+    "max_abs_diff": 1.7763568394002505e-15,
+    "pass_": true
+  },
+  "V5_zz_reupload_closed_form_L1": {
+    "max_abs_diff": 1.1102230246251565e-15,
+    "pass_": true
+  },
+  "V6_normalisation_n8_complete_L3": {
+    "max_norm_error": 3.1086244689504383e-15,
+    "pass_": true
+  },
+  "V7_cone_inside_gate_walk_bound": {
+    "settings": 762,
+    "violations": 0,
+    "pass_": true
+  },
+  "V8_zz_reupload_cone_equals_graph_cone": {
+    "mismatches": 0,
+    "pass_": true
+  },
+  "V9_cone_threshold_separates_zero_from_signal": {
+    "largest_numerical_zero": 2.3314683517128287e-15,
+    "weakest_dependence": 3.1309954628966352e-12,
+    "values_in_ambiguous_band": 0,
+    "pass_": true
+  }
+}

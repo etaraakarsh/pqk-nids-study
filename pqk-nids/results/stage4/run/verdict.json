@@ -1,0 +1,23 @@
+{
+  "partA": {
+    "mode": "run",
+    "A1": "5/9 entangling families pass",
+    "A1_outcome": "FAMILY-SPECIFIC",
+    "A2": "7/9 entangling families pass",
+    "A2_outcome": "GENERALISES"
+  },
+  "partB": {
+    "mode": "run",
+    "B1": "concentration predictive (positive, p<0.05 in >=2 of 3 tasks at N=1000) in 1/10 families",
+    "B1_replicates": true,
+    "B2": "coupled - uncoupled <= +0.02 in 78/81 cells (share 0.96); median delta +0.0014",
+    "B2_replicates": true,
+    "B3": "non-inferior to RBF-SVM in 87/90 cells (share 0.97)",
+    "B3_replicates": true,
+    "B4": "bandwidth effect > graph effect in 8/27 cells",
+    "B4_replicates": false,
+    "overall": "Stage 3 conclusions GENERALISE across the ten families",
+    "reproduction_of_stage3": "972 result rows (task, graph, L, c, N, seed) compared with Stage 3; identical (|diff| < 1e-9): 968; max |diff| = 5.14e-04",
+    "failed_rows": 0
+  }
+}

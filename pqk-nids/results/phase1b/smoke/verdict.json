@@ -1,0 +1,13 @@
+{
+  "mode": "smoke",
+  "C1": "0/1 cells",
+  "C1_pass": false,
+  "C2": "16/16 cells negative",
+  "C2_pass": true,
+  "C3": "median |log ratio| equal degree = 0.0069; one-step degree effect = 0.1197; pairs = 2",
+  "C3_pass": true,
+  "C4": "not evaluable (needs n = 12, 14)",
+  "C4_pass": false,
+  "C5": "passed (see simulator_checks.json)",
+  "verdict": "MIXED"
+}

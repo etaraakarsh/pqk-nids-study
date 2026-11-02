@@ -1,0 +1,429 @@
+{
+  "created": "2026-10-06 17:55:58 EDT",
+  "phase0_mode_of_frozen_splits": "quick",
+  "tasks": {
+    "fashion_mnist:binary": {
+      "dataset": "fashion_mnist",
+      "views": [
+        "pca8",
+        "pca16"
+      ]
+    },
+    "nf_unsw_nb15_v2:binary": {
+      "dataset": "nf_unsw_nb15_v2",
+      "views": [
+        "mi8",
+        "mi16"
+      ]
+    },
+    "unsw_nb15:binary": {
+      "dataset": "unsw_nb15",
+      "views": [
+        "mi8",
+        "mi16"
+      ]
+    }
+  },
+  "training_sizes": [
+    250,
+    500,
+    1000,
+    2000,
+    4000
+  ],
+  "comparators": {
+    "like_for_like": "RBF-SVM (classical kernel, same features, same N)",
+    "ceiling": "best classical model of LR, RBF-SVM, RFF, RF, XGBoost, LightGBM, MLP (same features, same N)"
+  },
+  "primary_metric": "macro-F1 on the clean test split",
+  "secondary_metrics": [
+    "MCC",
+    "ROC-AUC",
+    "minority-class PR-AUC"
+  ],
+  "reference_baselines_phase0": {
+    "fashion_mnist:binary": {
+      "pca8": {
+        "250": {
+          "rbf_svm_macro_f1": 0.8052,
+          "rbf_svm_sd": 0.0091,
+          "best_model": "rf",
+          "best_macro_f1": 0.8093,
+          "best_sd": 0.0083,
+          "seeds": 3
+        },
+        "500": {
+          "rbf_svm_macro_f1": 0.8089,
+          "rbf_svm_sd": 0.0065,
+          "best_model": "svm",
+          "best_macro_f1": 0.8089,
+          "best_sd": 0.0065,
+          "seeds": 3
+        },
+        "1000": {
+          "rbf_svm_macro_f1": 0.8197,
+          "rbf_svm_sd": 0.0053,
+          "best_model": "svm",
+          "best_macro_f1": 0.8197,
+          "best_sd": 0.0053,
+          "seeds": 3
+        },
+        "2000": {
+          "rbf_svm_macro_f1": 0.8276,
+          "rbf_svm_sd": 0.0032,
+          "best_model": "svm",
+          "best_macro_f1": 0.8276,
+          "best_sd": 0.0032,
+          "seeds": 3
+        },
+        "4000": {
+          "rbf_svm_macro_f1": 0.8296,
+          "rbf_svm_sd": 0.0006,
+          "best_model": "svm",
+          "best_macro_f1": 0.8296,
+          "best_sd": 0.0006,
+          "seeds": 3
+        }
+      },
+      "pca16": {
+        "250": {
+          "rbf_svm_macro_f1": 0.8169,
+          "rbf_svm_sd": 0.0111,
+          "best_model": "rff",
+          "best_macro_f1": 0.8183,
+          "best_sd": 0.0025,
+          "seeds": 3
+        },
+        "500": {
+          "rbf_svm_macro_f1": 0.8143,
+          "rbf_svm_sd": 0.0095,
+          "best_model": "rff",
+          "best_macro_f1": 0.8174,
+          "best_sd": 0.0117,
+          "seeds": 3
+        },
+        "1000": {
+          "rbf_svm_macro_f1": 0.8239,
+          "rbf_svm_sd": 0.0011,
+          "best_model": "rff",
+          "best_macro_f1": 0.8302,
+          "best_sd": 0.0041,
+          "seeds": 3
+        },
+        "2000": {
+          "rbf_svm_macro_f1": 0.831,
+          "rbf_svm_sd": 0.007,
+          "best_model": "mlp",
+          "best_macro_f1": 0.8317,
+          "best_sd": 0.0099,
+          "seeds": 3
+        },
+        "4000": {
+          "rbf_svm_macro_f1": 0.8385,
+          "rbf_svm_sd": 0.0038,
+          "best_model": "lgbm",
+          "best_macro_f1": 0.8426,
+          "best_sd": 0.005,
+          "seeds": 3
+        }
+      }
+    },
+    "nf_unsw_nb15_v2:binary": {
+      "mi8": {
+        "250": {
+          "rbf_svm_macro_f1": 0.908,
+          "rbf_svm_sd": 0.0043,
+          "best_model": "svm",
+          "best_macro_f1": 0.908,
+          "best_sd": 0.0043,
+          "seeds": 3
+        },
+        "500": {
+          "rbf_svm_macro_f1": 0.9106,
+          "rbf_svm_sd": 0.0042,
+          "best_model": "svm",
+          "best_macro_f1": 0.9106,
+          "best_sd": 0.0042,
+          "seeds": 3
+        },
+        "1000": {
+          "rbf_svm_macro_f1": 0.9136,
+          "rbf_svm_sd": 0.0002,
+          "best_model": "svm",
+          "best_macro_f1": 0.9136,
+          "best_sd": 0.0002,
+          "seeds": 3
+        },
+        "2000": {
+          "rbf_svm_macro_f1": 0.9153,
+          "rbf_svm_sd": 0.0007,
+          "best_model": "svm",
+          "best_macro_f1": 0.9153,
+          "best_sd": 0.0007,
+          "seeds": 3
+        },
+        "4000": {
+          "rbf_svm_macro_f1": 0.9167,
+          "rbf_svm_sd": 0.0012,
+          "best_model": "xgb",
+          "best_macro_f1": 0.9193,
+          "best_sd": 0.001,
+          "seeds": 3
+        }
+      },
+      "mi16": {
+        "250": {
+          "rbf_svm_macro_f1": 0.9122,
+          "rbf_svm_sd": 0.0036,
+          "best_model": "svm",
+          "best_macro_f1": 0.9122,
+          "best_sd": 0.0036,
+          "seeds": 3
+        },
+        "500": {
+          "rbf_svm_macro_f1": 0.911,
+          "rbf_svm_sd": 0.0054,
+          "best_model": "rf",
+          "best_macro_f1": 0.9168,
+          "best_sd": 0.0051,
+          "seeds": 3
+        },
+        "1000": {
+          "rbf_svm_macro_f1": 0.9172,
+          "rbf_svm_sd": 0.0008,
+          "best_model": "svm",
+          "best_macro_f1": 0.9172,
+          "best_sd": 0.0008,
+          "seeds": 3
+        },
+        "2000": {
+          "rbf_svm_macro_f1": 0.9154,
+          "rbf_svm_sd": 0.0025,
+          "best_model": "rf",
+          "best_macro_f1": 0.9222,
+          "best_sd": 0.005,
+          "seeds": 3
+        },
+        "4000": {
+          "rbf_svm_macro_f1": 0.9169,
+          "rbf_svm_sd": 0.0005,
+          "best_model": "xgb",
+          "best_macro_f1": 0.9283,
+          "best_sd": 0.0022,
+          "seeds": 3
+        }
+      }
+    },
+    "unsw_nb15:binary": {
+      "mi8": {
+        "250": {
+          "rbf_svm_macro_f1": 0.7257,
+          "rbf_svm_sd": 0.0111,
+          "best_model": "rf",
+          "best_macro_f1": 0.7473,
+          "best_sd": 0.0118,
+          "seeds": 3
+        },
+        "500": {
+          "rbf_svm_macro_f1": 0.7236,
+          "rbf_svm_sd": 0.0059,
+          "best_model": "xgb",
+          "best_macro_f1": 0.767,
+          "best_sd": 0.0127,
+          "seeds": 3
+        },
+        "1000": {
+          "rbf_svm_macro_f1": 0.7339,
+          "rbf_svm_sd": 0.0003,
+          "best_model": "xgb",
+          "best_macro_f1": 0.7932,
+          "best_sd": 0.0088,
+          "seeds": 3
+        },
+        "2000": {
+          "rbf_svm_macro_f1": 0.7329,
+          "rbf_svm_sd": 0.0022,
+          "best_model": "xgb",
+          "best_macro_f1": 0.7937,
+          "best_sd": 0.0024,
+          "seeds": 3
+        },
+        "4000": {
+          "rbf_svm_macro_f1": 0.7326,
+          "rbf_svm_sd": 0.0037,
+          "best_model": "xgb",
+          "best_macro_f1": 0.7938,
+          "best_sd": 0.0084,
+          "seeds": 3
+        }
+      },
+      "mi16": {
+        "250": {
+          "rbf_svm_macro_f1": 0.7131,
+          "rbf_svm_sd": 0.0199,
+          "best_model": "xgb",
+          "best_macro_f1": 0.7449,
+          "best_sd": 0.0086,
+          "seeds": 3
+        },
+        "500": {
+          "rbf_svm_macro_f1": 0.7153,
+          "rbf_svm_sd": 0.0037,
+          "best_model": "lgbm",
+          "best_macro_f1": 0.7586,
+          "best_sd": 0.0136,
+          "seeds": 3
+        },
+        "1000": {
+          "rbf_svm_macro_f1": 0.7285,
+          "rbf_svm_sd": 0.0093,
+          "best_model": "xgb",
+          "best_macro_f1": 0.7876,
+          "best_sd": 0.0065,
+          "seeds": 3
+        },
+        "2000": {
+          "rbf_svm_macro_f1": 0.7328,
+          "rbf_svm_sd": 0.0038,
+          "best_model": "xgb",
+          "best_macro_f1": 0.7905,
+          "best_sd": 0.0047,
+          "seeds": 3
+        },
+        "4000": {
+          "rbf_svm_macro_f1": 0.7332,
+          "rbf_svm_sd": 0.0038,
+          "best_model": "xgb",
+          "best_macro_f1": 0.7901,
+          "best_sd": 0.0079,
+          "seeds": 3
+        }
+      }
+    }
+  },
+  "feature_definitions": {
+    "fashion_mnist/pca8": "first 8 principal components (PCA fitted on the training split, each standardised on the training split)",
+    "fashion_mnist/pca16": "first 16 principal components (PCA fitted on the training split, each standardised on the training split)",
+    "nf_unsw_nb15_v2/mi8": [
+      "TCP_WIN_MAX_IN",
+      "TCP_WIN_MAX_OUT",
+      "SERVER_TCP_FLAGS",
+      "SHORTEST_FLOW_PKT",
+      "MAX_TTL",
+      "MIN_TTL",
+      "MIN_IP_PKT_LEN",
+      "RETRANSMITTED_IN_BYTES"
+    ],
+    "nf_unsw_nb15_v2/mi16": [
+      "TCP_WIN_MAX_IN",
+      "TCP_WIN_MAX_OUT",
+      "SERVER_TCP_FLAGS",
+      "SHORTEST_FLOW_PKT",
+      "MAX_TTL",
+      "MIN_TTL",
+      "MIN_IP_PKT_LEN",
+      "RETRANSMITTED_IN_BYTES",
+      "IN_BYTES",
+      "OUT_BYTES",
+      "NUM_PKTS_UP_TO_128_BYTES",
+      "DST_TO_SRC_SECOND_BYTES",
+      "SRC_TO_DST_SECOND_BYTES",
+      "RETRANSMITTED_OUT_BYTES",
+      "MAX_IP_PKT_LEN",
+      "LONGEST_FLOW_PKT"
+    ],
+    "unsw_nb15/mi8": [
+      "sbytes",
+      "dbytes",
+      "sttl",
+      "ct_state_ttl",
+      "dttl",
+      "dmean",
+      "rate",
+      "synack"
+    ],
+    "unsw_nb15/mi16": [
+      "sbytes",
+      "dbytes",
+      "sttl",
+      "ct_state_ttl",
+      "dttl",
+      "dmean",
+      "rate",
+      "synack",
+      "tcprtt",
+      "ackdat",
+      "dinpkt",
+      "smean",
+      "dur",
+      "dpkts",
+      "dload",
+      "sload"
+    ]
+  },
+  "hypotheses": {
+    "H1": "At fixed bandwidth, concentration of projected-kernel features is governed by causal-cone size, not interaction density.",
+    "H0": "Interaction density explains concentration at least as well as causal-cone size.",
+    "concentration_measure": "V = mean over qubits of the trace of the covariance (across inputs) of single-qubit Bloch vectors",
+    "cone_definition": "C_L(k) = qubits within graph distance L of qubit k, for an L-layer feature map; reported as the mean |C_L(k)| over qubits",
+    "criterion_A": "In each (dataset, bandwidth) cell: R^2 of log V on mean cone size >= 0.70, and adding density to that model is not significant (partial F-test, p > 0.05). H1 supported on A if at least 75% of cells pass.",
+    "criterion_B": "Across all pairs of graphs with equal n and equal edge count (equal density) but different mean cone size, at equal L and bandwidth: the graph with the larger cone has the lower V in at least 80% of pairs.",
+    "decision": "H1 is supported if both A and B pass; rejected if both fail; mixed otherwise (reported as such).",
+    "small_n_test": {
+      "qubits": [
+        6,
+        8,
+        9,
+        10
+      ],
+      "layers": [
+        1,
+        2,
+        3
+      ],
+      "bandwidths": [
+        0.3,
+        0.6,
+        1.0
+      ],
+      "samples_per_config": 200,
+      "inputs": [
+        "Gaussian control",
+        "fashion_mnist pca16 (first n)",
+        "nf_unsw_nb15_v2 mi16 (first n)",
+        "unsw_nb15 mi16 (first n)"
+      ]
+    }
+  },
+  "phase0_split_row_id_sha256": {
+    "nf_unsw_nb15_v2/train": "958bdd6cc4ff98efdd5de2c4f21d05e1dd5e5e51930091326bf669234750bab1",
+    "nf_unsw_nb15_v2/val": "e64d753cde581f0ecbbcbcf1f072f221474e4d82ecf1d0ac13ec0f7906ced2f5",
+    "nf_unsw_nb15_v2/test": "e23ca621d377597a58c04e1bd2e014536f39093490864215c7cdaad899fb2a32",
+    "unsw_nb15/train": "ec8e34c307f3083f1394e08df3d800f87e9611cb3409902a06365621a2b50c46",
+    "unsw_nb15/val": "44529f781a9f791de28860d07a2370b28e31d1efb516767ef5fd606d2640d754",
+    "unsw_nb15/test": "0918efd7cce5cab0ca7936273d1f9e874e2c4774a569adbb23f29970f2e872ac",
+    "unsw_nb15/test_official": "6ae55b5c3474bd7446e34bd48770d69731eb8eb526a82ba55741a0357ac68ffb",
+    "fashion_mnist/train": "2769925c5051f7606aa0fd2f65931753ad74d0a6437088b01d3f74414dd97c02",
+    "fashion_mnist/val": "eb26544ca68faa3bbb7a8a636b544ea292bab4fa6a3d65e8f06549b977c3dfdf",
+    "fashion_mnist/test": "1fc750387b4f23d28be336ec46f04eb438e0ea8519609fd8c680231d3f54a79c"
+  },
+  "file_sha256": {
+    "results/phase0/quick/baselines.csv": "28c35123c3de9dcd8c48074cf22020bc6d29e0a2c752881c720568f52749e7ee",
+    "results/phase0/quick/splits.csv": "9434c8d694d5fb6f08a85b0258772cd978bf2a937ddb9a64f342fb8dfa394219",
+    "results/phase0/quick/feature_rankings.json": "9a97a2788193868d7b42e8ac2e488a5ecdbf1366d52c93c53d26d36d49b6abda",
+    "results/phase0/quick/phase0_gate.json": "25c8250c588349d8f1ad1c8c995f88dd4331dfa709191161ee72f177a0fdd293",
+    "data/processed/fashion_mnist/train_quick.parquet": "d842ed00434bee3bcba734b71561669ccfd2b62ab63a9b072bec927f3922a9a8",
+    "data/processed/fashion_mnist/val_quick.parquet": "e59edb76e7311759ef419cc0407d7842ac8a92a15bd1d68cd5a434392f3d5cb4",
+    "data/processed/fashion_mnist/test_quick.parquet": "8e71bea41ef72d8a324c96054e136f6fc168c6e575a1631f7f5a5507de58b6b4",
+    "data/processed/fashion_mnist/preprocessor_quick.joblib": "0b85061a953047aeddc6d56b32cb0706124efb7a814f11d1579ffea762c18913",
+    "data/processed/fashion_mnist/pca_quick.joblib": "23fe556b7a34bbbd9d5aeb8345512fd23ea1afaf4e0dde30d9fa2607e2e44520",
+    "data/processed/nf_unsw_nb15_v2/train_quick.parquet": "ac6f2e9bab67e66e08e9dc1a63f6ade9153cfe6be13fac80e9ccfac25f1c98de",
+    "data/processed/nf_unsw_nb15_v2/val_quick.parquet": "29ee7264b7180b5a885831b124894ec10bc7741da21c7c49459167cb8387fe6d",
+    "data/processed/nf_unsw_nb15_v2/test_quick.parquet": "11d658de45f9c4e5c1e1460a2b8f586b32cbbe42b04ff60e6bd0856ffb5348d4",
+    "data/processed/nf_unsw_nb15_v2/preprocessor_quick.joblib": "a89fea97dac1a189f3353c7139b53e4ede0506056a926427fda3bd57b01800fc",
+    "data/processed/unsw_nb15/train_quick.parquet": "549965f663cfa43f450526300d7a5e705ff3c36b9efa9c1beb36cf32ff3906c7",
+    "data/processed/unsw_nb15/val_quick.parquet": "16041b97032cd534522de2e5c1f000b283a3abd656122c971e17e95d250e498a",
+    "data/processed/unsw_nb15/test_quick.parquet": "a76fffedf2b337c68d1bc788ee3d8b44107938154d8637edfe9a0aa927e3aba1",
+    "data/processed/unsw_nb15/preprocessor_quick.joblib": "072a985ceb66782b4c7a96e78fbc91b0bc1fab12ef8e431c3a8f6242484d498a"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "train": {
+    "total_images": 60000,
+    "pair_images": 12000,
+    "per_class": {
+      "T-shirt/top": 6000,
+      "Shirt": 6000
+    }
+  },
+  "test": {
+    "total_images": 10000,
+    "pair_images": 2000,
+    "per_class": {
+      "T-shirt/top": 1000,
+      "Shirt": 1000
+    }
+  },
+  "duplicate_images_in_train": 0,
+  "duplicate_images_in_test": 0,
+  "test_images_identical_to_train": 0,
+  "positive_class": "Shirt",
+  "negative_class": "T-shirt/top"
+}

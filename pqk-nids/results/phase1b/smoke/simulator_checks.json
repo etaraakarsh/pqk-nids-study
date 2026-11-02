@@ -1,0 +1,14 @@
+{
+  "dense_check_n3": {
+    "max_abs_diff": 1.1443916996305594e-16,
+    "pass_": true
+  },
+  "C5_closed_form_L1": {
+    "max_abs_diff": 1.1102230246251565e-15,
+    "pass_": true
+  },
+  "normalisation": {
+    "max_norm_error": 2.220446049250313e-16,
+    "pass_": true
+  }
+}

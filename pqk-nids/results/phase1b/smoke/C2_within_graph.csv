@@ -1,0 +1,17 @@
+inputs,c,n,graph,L,spearman_degree_V,negative
+gaussian,0.6,8,chain,2,-0.7559289460184545,True
+gaussian,0.6,8,double_star,2,-0.7559289460184545,True
+gaussian,0.6,8,erdos_renyi_a,2,-0.944911182523068,True
+gaussian,0.6,8,erdos_renyi_b,2,-0.7637626158259735,True
+gaussian,0.6,8,random_tree_a,2,-0.8476658628056142,True
+gaussian,0.6,8,random_tree_b,2,-0.7563787698880865,True
+gaussian,0.6,8,star,2,-0.5773502691896258,True
+gaussian,0.6,8,wheel,2,-0.5773502691896258,True
+gaussian,0.6,10,chain,2,-0.6963106238227913,True
+gaussian,0.6,10,double_star,2,-0.6963106238227913,True
+gaussian,0.6,10,erdos_renyi_a,2,-0.8581718527846035,True
+gaussian,0.6,10,erdos_renyi_b,2,-0.9439648493270291,True
+gaussian,0.6,10,random_tree_a,2,-0.8882347881956881,True
+gaussian,0.6,10,random_tree_b,2,-0.8303988737722912,True
+gaussian,0.6,10,star,2,-0.5222329678670935,True
+gaussian,0.6,10,wheel,2,-0.5222329678670935,True

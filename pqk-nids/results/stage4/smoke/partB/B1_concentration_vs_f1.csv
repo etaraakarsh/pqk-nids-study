@@ -1,0 +1,11 @@
+family,task,N,configs,spearman,p,positive_significant
+crx,synthetic:binary,250,3,0.5,0.6666666666666666,False
+cz_layers,synthetic:binary,250,3,0.5,0.6666666666666666,False
+havlicek_zz,synthetic:binary,250,3,1.0,0.0,True
+hea_cnot,synthetic:binary,250,3,1.0,0.0,True
+heisenberg,synthetic:binary,250,3,1.0,0.0,True
+iqp,synthetic:binary,250,3,0.5,0.6666666666666666,False
+ms_xx,synthetic:binary,250,3,-1.0,0.0,False
+separable,synthetic:binary,250,1,,,False
+xy,synthetic:binary,250,3,0.5,0.6666666666666666,False
+zz_reupload,synthetic:binary,250,3,0.5,0.6666666666666666,False

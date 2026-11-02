@@ -1,0 +1,7 @@
+{
+  "mode": "smoke",
+  "A1": "5/9 entangling families pass",
+  "A1_outcome": "FAMILY-SPECIFIC",
+  "A2": "0/9 entangling families pass",
+  "A2_outcome": "DOES NOT GENERALISE"
+}

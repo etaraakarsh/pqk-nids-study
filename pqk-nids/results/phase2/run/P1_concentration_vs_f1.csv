@@ -1,0 +1,10 @@
+task,N,configs,spearman,p,positive_significant
+fashion_mnist:binary,250,66,-0.51,1.2462876391724828e-05,False
+fashion_mnist:binary,1000,66,-0.597,1.200689417201139e-07,False
+fashion_mnist:binary,4000,66,-0.516,9.18322165315385e-06,False
+nf_unsw_nb15_v2:binary,250,66,0.04,0.7508481340801781,False
+nf_unsw_nb15_v2:binary,1000,66,-0.154,0.21573270097987507,False
+nf_unsw_nb15_v2:binary,4000,66,0.052,0.6796100948220463,False
+unsw_nb15:binary,250,66,-0.192,0.12189375685162523,False
+unsw_nb15:binary,1000,66,0.26,0.035340032904312986,True
+unsw_nb15:binary,4000,66,0.281,0.02222029893206066,True

@@ -1,0 +1,24 @@
+# Raw and derived data are not redistributed (see DATA.md)
+pqk-nids/data/
+
+# Python and Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+.kernel/
+
+# Figure outputs (regenerate with the notebooks in figures/)
+figures/figs/
+figures/circuit_figures/
+figures/*.nbconvert.ipynb
+
+# LaTeX build files
+*.aux
+*.log
+*.out
+*.synctex.gz
+
+# Operating system files
+.DS_Store
+Thumbs.db

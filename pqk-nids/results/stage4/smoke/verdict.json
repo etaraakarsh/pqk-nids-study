@@ -1,0 +1,23 @@
+{
+  "partA": {
+    "mode": "smoke",
+    "A1": "5/9 entangling families pass",
+    "A1_outcome": "FAMILY-SPECIFIC",
+    "A2": "0/9 entangling families pass",
+    "A2_outcome": "DOES NOT GENERALISE"
+  },
+  "partB": {
+    "mode": "smoke",
+    "B1": "concentration predictive (positive, p<0.05 in >=2 of 3 tasks at N=250) in 0/10 families",
+    "B1_replicates": true,
+    "B2": "coupled - uncoupled <= +0.02 in 9/9 cells (share 1.00); median delta -0.0351",
+    "B2_replicates": true,
+    "B3": "non-inferior to RBF-SVM in 0/10 cells (share 0.00)",
+    "B3_replicates": false,
+    "B4": "bandwidth effect > graph effect in 0/9 cells",
+    "B4_replicates": false,
+    "overall": "Stage 3 conclusions PARTLY GENERALISE",
+    "reproduction_of_stage3": "not available (smoke or no Stage 3 results)",
+    "failed_rows": 0
+  }
+}

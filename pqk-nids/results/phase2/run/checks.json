@@ -1,0 +1,15 @@
+{
+  "dense_check_n3": {
+    "max_abs_diff": 1.1443916996305594e-16,
+    "pass_": true
+  },
+  "normalisation": {
+    "max_norm_error": 2.220446049250313e-16,
+    "pass_": true
+  },
+  "assignment": {
+    "star_hub_gets_feature_when_high": 0,
+    "star_hub_gets_feature_when_low": 7,
+    "pass_": true
+  }
+}

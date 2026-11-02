@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this code or these results, please cite the paper."
+title: "Entangling structure shapes projected quantum kernels but rarely their accuracy: code, frozen protocol and results"
+authors:
+  - family-names: Etar
+    given-names: Aakarsh
+    affiliation: "Department of Electrical and Computer Engineering, Florida International University"
+  - family-names: Soni
+    given-names: Jayesh
+    affiliation: "Applied Research Center, Florida International University"
+  - family-names: Upadhyay
+    given-names: Himanshu
+    affiliation: "Department of Electrical and Computer Engineering, Florida International University"
+license: MIT
+date-released: 2026-10-09
+preferred-citation:
+  type: article
+  title: "Entangling structure shapes projected quantum kernels but rarely their accuracy"
+  authors:
+    - family-names: Etar
+      given-names: Aakarsh
+    - family-names: Soni
+      given-names: Jayesh
+    - family-names: Upadhyay
+      given-names: Himanshu
+  journal: "Quantum Machine Intelligence"
+  year: 2026
+  notes: "Submitted"

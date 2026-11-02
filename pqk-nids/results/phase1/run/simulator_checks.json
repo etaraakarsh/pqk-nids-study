@@ -1,0 +1,15 @@
+{
+  "dense_check_n3": {
+    "max_abs_diff": 1.1443916996305594e-16,
+    "pass_": true
+  },
+  "normalisation": {
+    "max_norm_error": 8.881784197001252e-16,
+    "pass_": true
+  },
+  "light_cone_outside_has_no_effect": {
+    "max_change_from_outside": 1.1102230246251565e-15,
+    "inside_perturbations_that_changed_state": "965/974",
+    "pass_": true
+  }
+}

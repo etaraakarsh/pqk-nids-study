@@ -1,0 +1,6 @@
+n,L,edges,density,graph_small_cone,graph_large_cone,cone_small,cone_large,same_degree_sequence
+6,2,5,0.3333,chain,star,4.0,6.0,False
+6,2,6,0.4,triangles,ring,3.0,5.0,True
+8,2,7,0.25,chain,star,4.25,8.0,False
+8,2,8,0.2857,two_cycles,ring,4.0,5.0,True
+8,2,12,0.4286,k4s,regular3,4.0,7.5,True

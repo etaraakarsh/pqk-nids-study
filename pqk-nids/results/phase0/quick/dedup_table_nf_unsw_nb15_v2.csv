@@ -1,0 +1,11 @@
+,raw_rows,unique_vectors,multi_ambiguous,sampled
+Benign,1911666,68987,0,68987
+Exploits,29905,21851,400,21851
+Fuzzers,20645,6745,164,6745
+Reconnaissance,11171,341,111,341
+Generic,5992,1719,67,1719
+DoS,4172,3092,191,3092
+Shellcode,1427,215,78,215
+Backdoor,833,263,115,263
+Analysis,770,757,421,757
+Worms,164,50,11,50

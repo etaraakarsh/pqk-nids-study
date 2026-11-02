@@ -1,0 +1,6 @@
+inputs,c,n,L,edges,small,large,V_small_cone,V_large_cone,larger_cone_more_concentrated,same_degree_sequence
+gaussian,0.6,6,2,5,chain,star,0.6070149141258431,0.5672397501440507,True,False
+gaussian,0.6,6,2,6,triangles,ring,0.5459776706361642,0.5799834729553014,False,True
+gaussian,0.6,8,2,7,chain,star,0.5854271794564407,0.5776379365804951,True,False
+gaussian,0.6,8,2,8,two_cycles,ring,0.545751076158175,0.5595408773748182,False,True
+gaussian,0.6,8,2,12,k4s,regular3,0.47224499785794893,0.4856433121319207,False,True

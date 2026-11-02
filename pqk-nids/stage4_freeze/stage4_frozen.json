@@ -1,0 +1,150 @@
+{
+  "created": "2026-10-07 09:59:53 EDT",
+  "builds_on": {
+    "phase1_freeze_sha256": "93ce9a06922e9ab0e65992840d86eb6b38e2942d44edf4a60a65c728827fcc28",
+    "phase1b_freeze_sha256": "647737d289a228969352f8ea4b9865c377102486e4dd043a3d54c438b512345a",
+    "phase2_freeze_sha256": "2d0fa5b9a2124e57bf1eee75a37cd63531bbd4b22ae306ff677f6e7eb347004d",
+    "verdicts_so_far": {
+      "stage1": "H1 (causal cone) REJECTED",
+      "stage2": "H2 (coupling degree) MIXED: C2, C3 pass; C1, C4 fail",
+      "stage3": "P1 FAIL, P2 FAIL; P3 PQK non-inferior to RBF-SVM in 9/9 task x N cells"
+    },
+    "design_note": "Stage 4 was designed after Stages 1-3 to test whether their conclusions are specific to the ZZ re-uploading map. Stage 1-3 verdicts are not revisited. All Stage 4 hypotheses, thresholds and the analysis code are fixed by this file before any Stage 4 result on real data exists."
+  },
+  "families": {
+    "zz_reupload": "R_y(c x_k); ZZ(c^2 x_i x_j)",
+    "havlicek_zz": "H; R_z(2 c x_k); ZZ(2 (pi - c x_i)(pi - c x_j))",
+    "iqp": "H; R_z(c x_k); ZZ(c^2 x_i x_j)",
+    "xy": "R_y(c x_k); exp(-i t (XX+YY)/2), t = c^2 x_i x_j",
+    "heisenberg": "R_y(c x_k); exp(-i t (XX+YY+ZZ)/2), t = c^2 x_i x_j",
+    "ms_xx": "R_y(c x_k); exp(-i t XX/2), t = c^2 x_i x_j",
+    "hea_cnot": "R_y(c x_k) R_z(c x_k); CNOT(i -> j)",
+    "cz_layers": "R_y(c x_k) R_z(c x_k); CZ(i, j)",
+    "crx": "R_y(c x_k); CRX(c x_i), control i, target j",
+    "separable": "R_y(c x_k) R_z(c x_k); no two-qubit gates"
+  },
+  "entangler_classes": {
+    "commuting": [
+      "zz_reupload",
+      "havlicek_zz",
+      "iqp",
+      "cz_layers",
+      "ms_xx"
+    ],
+    "non_commuting": [
+      "xy",
+      "heisenberg",
+      "hea_cnot",
+      "crx"
+    ],
+    "control": [
+      "separable"
+    ]
+  },
+  "circuit_conventions": "L layers; each layer = single-qubit encoding gates then two-qubit gates on the sorted edge list; R_a(t) = exp(-i t A/2); qubit q receives feature q (importance order); exact statevector simulation; Bloch vectors (X, Y, Z expectations) of every qubit are the projected-kernel features",
+  "cone_definition": "light cone measured from the circuit: D(k) = {j : shifting x_j by 1.0 changes qubit k's Bloch vector by more than 1e-13 (max over 24 Gaussian inputs, seed 7, c = 1.0)}; computed per family, graph, n and L. Checks: inside the backward gate-walk bound; equal to the graph-distance-L cone for zz_reupload; no sensitivity value in the ambiguous band [1e-14, 1e-12).",
+  "concentration_measure": "V_k = trace of the covariance (across inputs) of qubit k's Bloch vector",
+  "partA": {
+    "qubits": [
+      8,
+      12
+    ],
+    "layers": [
+      1,
+      2,
+      3
+    ],
+    "bandwidths": [
+      0.3,
+      0.6,
+      1.0
+    ],
+    "samples_per_config": 200,
+    "graphs": [
+      "empty",
+      "matching",
+      "chain",
+      "ring",
+      "cycles4",
+      "triangles",
+      "two_cycles",
+      "k4s",
+      "regular3",
+      "star",
+      "wheel",
+      "double_star",
+      "erdos_renyi_a",
+      "random_tree_a",
+      "complete"
+    ],
+    "graphs_note": "the Stage 2 graph generator with seed 20261001; graphs that do not exist at a given n, or duplicate another graph's edge set, are skipped",
+    "inputs": [
+      "gaussian (seed 20261001+4)",
+      "fashion_mnist pca16 (first n)",
+      "nf_unsw_nb15_v2 mi16 (first n)",
+      "unsw_nb15 mi16 (first n)"
+    ],
+    "fresh_rows": "200 training rows per dataset drawn with seed 20261001+4, excluding every row used in Stages 1 and 2"
+  },
+  "partB": {
+    "tasks": {
+      "fashion_mnist:binary": "pca8",
+      "nf_unsw_nb15_v2:binary": "mi8",
+      "unsw_nb15:binary": "mi8"
+    },
+    "qubits": 8,
+    "training_sizes": [
+      250,
+      1000,
+      4000
+    ],
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "graphs": [
+      "empty",
+      "chain",
+      "ring",
+      "star",
+      "regular3",
+      "complete"
+    ],
+    "layers": [
+      1,
+      2
+    ],
+    "bandwidths": [
+      0.3,
+      0.6,
+      1.0
+    ],
+    "separable_family": "graph ignored: run once per (L, c) as graph 'empty'",
+    "validation_subset": "as Stage 3: stratified 2000 rows of the validation split, seed 0",
+    "test_subset": "as Stage 3: stratified min(4000, all) rows of the clean test split, seed 20261001; the same rows for every model",
+    "quantum_kernel": "as Stage 3: projected 1-RDM kernel, gamma = multiplier / median distance (500 training points), multipliers {0.5, 1, 2}, SVM C in {1, 10, 100}, class_weight balanced, tuned on validation with the seed-0 sample, refit per seed",
+    "comparators": "as Stage 3: RBF-SVM and the Phase 0 best classical model on identical training samples and test rows",
+    "selection": "'validation-selected' = highest validation macro-F1 among the stated configurations; ties broken by the order graph list -> L -> c",
+    "primary_metric": "macro-F1 on the test subset"
+  },
+  "hypotheses": {
+    "A1": "Degree mechanism generalises. For each entangling family, in every cell (inputs, c, n, heterogeneous graph, L in {2,3}) compute the Spearman correlation between coupling degree d_k and V_k across qubits; the family passes if >= 80% of its cells are negative (undefined correlations count as not negative). GENERALISES if >= 7 of the 9 entangling families pass; FAMILY-SPECIFIC if 3-6 pass; DOES NOT GENERALISE if <= 2 pass.",
+    "A2": "Cone irrelevance at equal degree generalises. For each entangling family, compare graphs with equal uniform degree (same n, L, c, inputs) whose mean light cone differs by >= 0.5: median |log(V_larger_cone / V_smaller_cone)| (V averaged over qubits). The family passes if it has >= 10 such pairs, the median is <= 0.05, and the median is <= one third of the family's median one-step degree effect (matching -> ring, ring -> regular3, same n, L, c, inputs). Same 7 / 3-6 / <= 2 rule.",
+    "A3": "Descriptive (no pass/fail): per family, R2 of log V_k on [d_k, L, d_k*L] versus [|D(k)|, L, |D(k)|*L], per (inputs, c).",
+    "B1": "Concentration does not predict accuracy (replicates Stage 3 P1 failure). For each family and task at N = 1000, Spearman correlation across that family's configurations (graph, L, c) between mean V (seed-0 training sample) and seed-averaged test macro-F1. Concentration is predictive for a family if the correlation is positive with p < 0.05 in >= 2 of 3 tasks. B1 REPLICATES if concentration is not predictive in >= 8 of the 10 families.",
+    "B2": "Entanglement adds no meaningful accuracy (replicates Stage 3 entangled-vs-uncoupled). For each entangling family, task and N: delta = seed-averaged test macro-F1 of the family's validation-selected coupled configuration (graph != empty) minus that of its validation-selected uncoupled configuration (graph = empty; same gates without two-qubit gates). B2 REPLICATES if delta <= +0.02 in >= 80% of the 81 cells.",
+    "B3": "Non-inferiority to RBF-SVM (replicates Stage 3 P3). For each family, task and N: the family's validation-selected configuration versus RBF-SVM, paired bootstrap 95% CI (1000 resamples of test rows, seed-0 predictions) of the macro-F1 difference; non-inferior if the lower bound is > -0.01. B3 REPLICATES if non-inferior in >= 80% of the 90 cells.",
+    "B4": "Bandwidth matters more than graph (replicates Stage 3). For each entangling family and task at N = 1000: bandwidth effect = mean over (graph, L) of the range of seed-averaged macro-F1 across c; graph effect = mean over (L, c) of the range across graphs. B4 REPLICATES if the bandwidth effect exceeds the graph effect in >= 18 of the 27 cells."
+  },
+  "decision": {
+    "stage3_generalises": "B1, B2 and B3 all replicate -> 'Stage 3 conclusions GENERALISE across the ten families'; one or two replicate -> 'PARTLY GENERALISE'; none -> 'DO NOT GENERALISE'. B4 reported alongside.",
+    "concentration_mechanism": "A1 and A2 reported with their three-level outcome",
+    "verification": "if any circuit check fails, nothing is interpreted",
+    "reproduction": "zz_reupload configurations that also appear in Stage 3 are compared with the Stage 3 results (reported, not a hypothesis)"
+  },
+  "module": "pqk_circuits.py",
+  "module_sha256": "cc1c57fffafb730996033c6b41b5463de7370bccf7827dcc5fc8ab78c1644b4c",
+  "notebook": "stage4_generalisation.ipynb",
+  "notebook_code_sha256": "1eab5a8a0763f6ece2db375d45a9938a1de07b0e71179d8d21b1bd523ad1998b"
+}

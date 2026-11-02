@@ -1,0 +1,72 @@
+{
+  "created": "2026-10-06 19:12:25 EDT",
+  "builds_on": {
+    "phase1_freeze_sha256": "93ce9a06922e9ab0e65992840d86eb6b38e2942d44edf4a60a65c728827fcc28",
+    "phase1_verdict": "H1 REJECTED (causal-cone hypothesis)",
+    "design_note": "H2 and the margins below were chosen after inspecting Phase 1 results (exploratory). Phase 1b tests them on new graphs, larger n and data rows not used in Phase 1."
+  },
+  "hypothesis": {
+    "H2": "For the ZZ re-uploading feature map, the Bloch-vector variance V_k of qubit k is governed by its own coupling degree d_k together with the layer count L, not by its causal-cone size |C_L(k)| and not by global graph density.",
+    "H0": "Causal-cone size or global density explains V_k at least as well as coupling degree."
+  },
+  "grid": {
+    "qubits": [
+      8,
+      10,
+      12,
+      14
+    ],
+    "layers": [
+      1,
+      2,
+      3
+    ],
+    "bandwidths": [
+      0.3,
+      0.6,
+      1.0
+    ],
+    "samples_per_config": 200,
+    "inputs": [
+      "gaussian (fresh seed)",
+      "fashion_mnist pca16 (first n)",
+      "nf_unsw_nb15_v2 mi16 (first n)",
+      "unsw_nb15 mi16 (first n)"
+    ],
+    "fresh_rows": "200 training rows per dataset drawn with seed 20261001+1, excluding every row used in Phase 1",
+    "graph_families": [
+      "empty",
+      "matching",
+      "chain",
+      "ring",
+      "cycles4",
+      "triangles",
+      "two_cycles",
+      "k4s",
+      "regular3",
+      "star",
+      "wheel",
+      "double_star",
+      "erdos_renyi_p0.3 (seeds a,b)",
+      "random_tree (seeds a,b)",
+      "complete"
+    ],
+    "graph_seed": 20261001
+  },
+  "criteria": {
+    "C1": "Per (inputs, bandwidth) cell, per-qubit regression of log V_k: degree model [d_k, L, d_k*L] vs cone model [|C_L(k)|, L, |C_L(k)|*L]. Cell passes if R2_degree >= 0.70, R2_degree - R2_cone >= 0.10, and adding graph density to the degree model raises R2 by <= 0.05. C1 passes if >= 75% of the 12 cells pass.",
+    "C2": "Within each graph whose qubits have unequal degrees, for L in {2,3}, every bandwidth and input set: Spearman correlation between d_k and V_k is negative. C2 passes if >= 80% of these cells are negative.",
+    "C3": "Equal-degree, different-cone comparisons (regular graphs with the same n and degree, mean cone differing by >= 0.5, same L, bandwidth, inputs): median |log(V_large_cone / V_small_cone)| <= 0.05 AND <= one third of the median |log V ratio| for a one-step degree change (matching->ring, ring->regular3) in the same run.",
+    "C4": "Out of sample: per cell, fit the degree model on n in {8,10} and predict log V_k for n in {12,14} without refitting. C4 passes if R2 >= 0.60 in >= 75% of the 12 cells.",
+    "C5": "Verification (must pass): for L = 1, the closed form r_k = (sin t_k Re P_k, sin t_k Im P_k, cos t_k), P_k = prod_{j in N(k)} (cos p_kj + i sin p_kj cos t_j), t_k = c x_k, p_kj = c^2 x_k x_j, matches the simulator to 1e-10.",
+    "calibration": "Margins from Phase 1 (exploratory): same-degree different-cone median |log V ratio| = 0.017; one-step degree change = 0.085-0.127."
+  },
+  "decision": {
+    "supported": "C1 and C2 pass (strongly supported if C3 and C4 also pass)",
+    "rejected": "C1 and C2 both fail",
+    "mixed": "any other combination; reported as such",
+    "verification": "if C5 fails, results are invalid and nothing is interpreted"
+  },
+  "notebook": "phase1b_degree_test.ipynb",
+  "notebook_code_sha256": "a5c0cc41646e29aae6993435b31d5c717eae5d73c086b8a0802fc83b56846666"
+}

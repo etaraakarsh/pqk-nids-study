@@ -1,0 +1,18 @@
+{
+  "C1_precomputed_matches_builtin": {
+    "max_abs_decision_diff": 7.105427357601002e-15,
+    "pass_": true
+  },
+  "C2_alignment_peaks_inside_grid": {
+    "peak_gamma_over_gamma0": 1.0,
+    "pass_": true
+  },
+  "C2_effective_rank_rises_with_gamma": {
+    "spearman": 1.0,
+    "pass_": true
+  },
+  "C3_rff_error_slope": {
+    "slope": -0.4760069848234229,
+    "pass_": true
+  }
+}

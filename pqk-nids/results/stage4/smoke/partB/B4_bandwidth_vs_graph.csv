@@ -1,0 +1,10 @@
+family,task,bandwidth_effect,graph_effect,bandwidth_larger
+crx,synthetic:binary,0.0,0.0252,False
+cz_layers,synthetic:binary,0.0,0.0518,False
+havlicek_zz,synthetic:binary,0.0,0.2527,False
+hea_cnot,synthetic:binary,0.0,0.1552,False
+heisenberg,synthetic:binary,0.0,0.0522,False
+iqp,synthetic:binary,0.0,0.055,False
+ms_xx,synthetic:binary,0.0,0.0121,False
+xy,synthetic:binary,0.0,0.0284,False
+zz_reupload,synthetic:binary,0.0,0.0417,False

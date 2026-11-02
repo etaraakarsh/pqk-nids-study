@@ -1,0 +1,30 @@
+{
+  "unsw_nb15/UNSW_NB15_training-set.csv": {
+    "bytes": 32293018,
+    "sha256": "bec7dd5ec88dc2a0ccc7a07879d338395ed7421750f675fd0339e07dfe0648fa"
+  },
+  "unsw_nb15/UNSW_NB15_testing-set.csv": {
+    "bytes": 15380800,
+    "sha256": "734fe6642edf758f7c94d7d9149426b49d202fe8e7bf0bef47392489c3c0a559"
+  },
+  "nf_unsw_nb15_v2/NF-UNSW-NB15-V2.parquet": {
+    "bytes": 57229841,
+    "sha256": "7500a64cc12f25542772d9c43d6438234333c2f8c4b45471425fcde18899e5c4"
+  },
+  "fashion_mnist/train-images-idx3-ubyte": {
+    "bytes": 47040016,
+    "sha256": "c59f468a2f672dc815687fe0f83887768d799fd8a3f3276145d20f83aa44d888"
+  },
+  "fashion_mnist/train-labels-idx1-ubyte": {
+    "bytes": 60008,
+    "sha256": "bad3541b69d912435c50bb6ba87bec294ff4f6a2e1246121d8633921760443d9"
+  },
+  "fashion_mnist/t10k-images-idx3-ubyte": {
+    "bytes": 7840016,
+    "sha256": "5b4141f0afbad91edebe8549f8fcffe087ea10ca49f1dbef5c9a5cd8815ce37b"
+  },
+  "fashion_mnist/t10k-labels-idx1-ubyte": {
+    "bytes": 10008,
+    "sha256": "0402a96d92fd2663957122ceb108a494c5af83dab82d92729df917d7dec38c34"
+  }
+}

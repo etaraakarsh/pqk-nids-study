@@ -1,0 +1,10 @@
+family,cells,share_negative,median_spearman,passes
+zz_reupload,2,1.0,-0.667,True
+havlicek_zz,2,1.0,-0.667,True
+iqp,2,0.5,-0.254,False
+cz_layers,2,1.0,-0.667,True
+ms_xx,2,0.5,-0.065,False
+xy,2,0.5,0.037,False
+heisenberg,2,0.5,-0.128,False
+hea_cnot,2,1.0,-0.604,True
+crx,2,1.0,-0.541,True

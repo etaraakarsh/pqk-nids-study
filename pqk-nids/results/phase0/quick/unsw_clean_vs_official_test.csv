@@ -1,0 +1,7 @@
+task,features,model,macro_f1,official_macro_f1,inflation
+unsw_nb15:binary,all,lgbm,0.8259,0.8674,0.0415
+unsw_nb15:binary,all,xgb,0.8255,0.8673,0.0418
+unsw_nb15:binary,all,rf,0.8208,0.8645,0.0437
+unsw_nb15:multi,all,lgbm,0.5916,0.5081,-0.0834
+unsw_nb15:multi,all,xgb,0.5908,0.5111,-0.0797
+unsw_nb15:multi,all,rf,0.5719,0.4937,-0.0782

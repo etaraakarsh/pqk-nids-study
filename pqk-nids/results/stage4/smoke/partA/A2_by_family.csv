@@ -1,0 +1,10 @@
+family,pairs,median_equal_degree,median_one_step_degree,passes
+zz_reupload,2,0.0184,0.1,False
+havlicek_zz,2,0.2296,0.7906,False
+iqp,2,0.0158,0.0799,False
+cz_layers,2,0.0222,0.1948,False
+ms_xx,2,0.0029,0.0876,False
+xy,4,0.0255,0.0988,False
+heisenberg,4,0.0224,0.131,False
+hea_cnot,4,0.2043,0.5737,False
+crx,3,0.0043,0.048,False

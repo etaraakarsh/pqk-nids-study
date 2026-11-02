@@ -1,0 +1,13 @@
+inputs,c,r2_out_of_sample,cell_pass
+fashion_mnist,0.3,0.94,True
+fashion_mnist,0.6,0.873,True
+fashion_mnist,1.0,0.659,True
+gaussian,0.3,0.945,True
+gaussian,0.6,0.886,True
+gaussian,1.0,0.721,True
+nf_unsw_nb15_v2,0.3,0.41,False
+nf_unsw_nb15_v2,0.6,0.227,False
+nf_unsw_nb15_v2,1.0,0.243,False
+unsw_nb15,0.3,0.929,True
+unsw_nb15,0.6,0.783,True
+unsw_nb15,1.0,0.495,False

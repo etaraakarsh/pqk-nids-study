@@ -1,0 +1,77 @@
+{
+  "created": "2026-10-06 22:28:24 EDT",
+  "builds_on": {
+    "phase1_freeze_sha256": "93ce9a06922e9ab0e65992840d86eb6b38e2942d44edf4a60a65c728827fcc28",
+    "phase1b_freeze_sha256": "647737d289a228969352f8ea4b9865c377102486e4dd043a3d54c438b512345a",
+    "phase1_verdict": "H1 (causal cone) REJECTED",
+    "phase1b_verdict": "H2 (coupling degree) MIXED: C2, C3 pass; C1, C4 fail"
+  },
+  "design": {
+    "tasks": {
+      "fashion_mnist:binary": "pca8",
+      "nf_unsw_nb15_v2:binary": "mi8",
+      "unsw_nb15:binary": "mi8"
+    },
+    "qubits": 8,
+    "training_sizes": [
+      250,
+      1000,
+      4000
+    ],
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "validation_subset": "stratified, 2000 rows of the validation split, seed 0",
+    "test_subset": "stratified, min(4000, all) rows of the clean test split, seed 20261001; the same rows for every model",
+    "graphs": [
+      "empty",
+      "matching",
+      "chain",
+      "ring",
+      "cycles4",
+      "star",
+      "wheel",
+      "k4s",
+      "regular3",
+      "erdos_renyi_a",
+      "complete"
+    ],
+    "layers": [
+      1,
+      2
+    ],
+    "bandwidths": [
+      0.3,
+      0.6,
+      1.0
+    ],
+    "assignments": {
+      "rank": "qubit q receives feature q (features in importance order: PCA order or MI rank)",
+      "top_to_low_degree": "most important features on lowest-degree qubits (heterogeneous graphs only)",
+      "top_to_high_degree": "most important features on highest-degree qubits (heterogeneous graphs only)"
+    },
+    "heterogeneous_graphs": [
+      "star",
+      "wheel",
+      "erdos_renyi_a"
+    ],
+    "quantum_kernel": "projected 1-RDM kernel k(x,x') = exp(-gamma * sum_k ||rho_k(x)-rho_k(x')||_F^2); gamma = multiplier * 1/median distance on 500 training points; multipliers {0.5,1,2}; SVM C in {1,10,100}; class_weight balanced",
+    "tuning": "hyperparameters chosen on the validation subset with the seed-0 training sample (macro-F1), then refit for every seed",
+    "comparators": "on the identical training samples and test subset: RBF-SVM (Phase 0 grid) on the same 8 features, and the Phase 0 best classical model for that task, view and N (Phase 0 grid)",
+    "primary_metric": "macro-F1 on the test subset"
+  },
+  "hypotheses": {
+    "P1": "Per-qubit concentration predicts usefulness: across feature-map configurations (assignment = rank) at N = 1000, the Spearman correlation between mean V (on the seed-0 training sample) and seed-averaged test macro-F1 is positive with p < 0.05 in at least 2 of the 3 tasks. Reported for N = 250 and 4000 as secondary.",
+    "P2": "Feature-to-qubit assignment matters as predicted by Phase 1b's exploratory refinement: in paired comparisons (same task, heterogeneous graph, L, c, N; seed-averaged), top_to_low_degree beats top_to_high_degree in >= 70% of pairs with a positive median difference.",
+    "P3_comparison": "Pre-specified, descriptive: for each task and N, the projected-kernel configuration with the best validation macro-F1 is compared on test with RBF-SVM and the best classical model (difference and bootstrap 95% CI over test rows, seed 0). Non-inferiority to RBF-SVM is declared if the lower CI bound of (PQK - RBF) is above -0.01."
+  },
+  "decision": {
+    "P1": "pass/fail as stated",
+    "P2": "pass/fail as stated",
+    "P3": "reported per task and N; no pass/fail on the paper's claims"
+  },
+  "notebook": "phase2_task_performance.ipynb",
+  "notebook_code_sha256": "064658ddd2c30ee77509c4ec53340a2f12e9c0e1d7aff5d50590f72a5c55df12"
+}

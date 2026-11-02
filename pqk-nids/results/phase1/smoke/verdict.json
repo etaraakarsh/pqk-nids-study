@@ -1,0 +1,9 @@
+{
+  "mode": "smoke",
+  "criterion_A_cells_passing": "0/1 (0%)",
+  "criterion_A_pass": false,
+  "criterion_B_pairs_consistent": "2/5 (40%)",
+  "criterion_B_pass": false,
+  "criterion_B_same_degree_pairs": "0/3",
+  "verdict": "H1 REJECTED"
+}

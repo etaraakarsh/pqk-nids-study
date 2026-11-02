@@ -1,0 +1,19 @@
+{
+  "mode": "full",
+  "tasks_with_headroom": [
+    "fashion_mnist:binary",
+    "nf_unsw_nb15_v2:binary",
+    "nf_unsw_nb15_v2:multi",
+    "unsw_nb15:binary",
+    "unsw_nb15:multi"
+  ],
+  "saturated_tasks_to_drop": [],
+  "concept_checks_pass": true,
+  "feature_variant": {
+    "nf_unsw_nb15_v2": "all",
+    "unsw_nb15": "all",
+    "fashion_mnist": "all"
+  },
+  "fashion_mnist_has_headroom": true,
+  "gate_pass": true
+}

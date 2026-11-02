@@ -1,0 +1,2 @@
+inputs,c,configs,r2_cone,r2_density,r2_both,partial_F_add_density,p_add_density,cell_pass
+gaussian,0.6,34,0.003,0.168,0.315,14.147,0.0007,False

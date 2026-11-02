@@ -1,0 +1,26 @@
+{
+  "train": {
+    "rows": 175341,
+    "unique": 100811,
+    "binary_ambiguous_vectors_dropped": 229,
+    "multi_ambiguous_vectors": 1543
+  },
+  "test": {
+    "rows": 82332,
+    "unique": 53940,
+    "binary_ambiguous_vectors_dropped": 6,
+    "multi_ambiguous_vectors": 569
+  },
+  "official_test_rows_identical_to_train": 8542,
+  "clean_test_rows": 52639,
+  "clean_test_attack_share": 0.3605,
+  "official_test_attack_share": 0.5506,
+  "test_categories_unseen_in_train": {
+    "proto": [],
+    "service": [],
+    "state": [
+      "ACC",
+      "CLO"
+    ]
+  }
+}

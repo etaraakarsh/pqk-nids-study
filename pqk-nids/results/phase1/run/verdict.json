@@ -1,0 +1,9 @@
+{
+  "mode": "run",
+  "criterion_A_cells_passing": "0/12 (0%)",
+  "criterion_A_pass": false,
+  "criterion_B_pairs_consistent": "98/240 (41%)",
+  "criterion_B_pass": false,
+  "criterion_B_same_degree_pairs": "94/144",
+  "verdict": "H1 REJECTED"
+}

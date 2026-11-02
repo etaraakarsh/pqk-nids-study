@@ -1,0 +1,13 @@
+inputs,c,obs,r2_degree,r2_cone,r2_degree_plus_density,cell_pass
+fashion_mnist,0.3,1980,0.94,0.942,0.94,False
+fashion_mnist,0.6,1980,0.879,0.75,0.88,True
+fashion_mnist,1.0,1980,0.775,0.531,0.777,True
+gaussian,0.3,1980,0.945,0.948,0.945,False
+gaussian,0.6,1980,0.894,0.733,0.894,True
+gaussian,1.0,1980,0.804,0.492,0.805,True
+nf_unsw_nb15_v2,0.3,1980,0.476,0.448,0.476,False
+nf_unsw_nb15_v2,0.6,1980,0.252,0.218,0.252,False
+nf_unsw_nb15_v2,1.0,1980,0.265,0.176,0.27,False
+unsw_nb15,0.3,1980,0.932,0.923,0.933,False
+unsw_nb15,0.6,1980,0.794,0.647,0.794,True
+unsw_nb15,1.0,1980,0.57,0.31,0.573,False

@@ -1,0 +1,4 @@
+dataset,xgb_f1_all,xgb_f1_no_ttl,xgb_f1_ttl_only,ttl_feature_flagged,decision
+nf_unsw_nb15_v2,0.9432,0.9417,0.8477,False,all
+unsw_nb15,0.9351,0.9326,0.8931,False,all
+fashion_mnist,,,,,"all (image data, audit not applicable)"

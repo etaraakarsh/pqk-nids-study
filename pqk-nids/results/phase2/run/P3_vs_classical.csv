@@ -1,0 +1,15 @@
+task,N,selected,comparator,pqk_macro_f1,comparator_macro_f1,diff_seed0_ci_lo,diff_seed0_ci_hi,non_inferior_to_rbf
+fashion_mnist:binary,250,k4s/L2/c0.3/rank,ceiling_rf,0.8128,0.8093,-0.0134,0.0103,
+fashion_mnist:binary,250,k4s/L2/c0.3/rank,rbf_svm,0.8128,0.8052,-0.0071,0.0138,True
+fashion_mnist:binary,1000,regular3/L2/c0.3/rank,rbf_svm,0.8196,0.8197,-0.0033,0.0117,True
+fashion_mnist:binary,4000,wheel/L2/c0.3/top_to_high_degree,rbf_svm,0.8295,0.8296,-0.0065,0.0091,True
+nf_unsw_nb15_v2:binary,250,star/L2/c0.3/top_to_high_degree,rbf_svm,0.8996,0.8962,0.0012,0.0058,True
+nf_unsw_nb15_v2:binary,1000,matching/L2/c0.3/rank,rbf_svm,0.9078,0.9032,0.0066,0.0141,True
+nf_unsw_nb15_v2:binary,4000,star/L2/c1.0/top_to_low_degree,ceiling_xgb,0.9064,0.9103,-0.0083,0.0013,
+nf_unsw_nb15_v2:binary,4000,star/L2/c1.0/top_to_low_degree,rbf_svm,0.9064,0.907,-0.0004,0.0044,True
+unsw_nb15:binary,250,chain/L1/c0.3/rank,ceiling_rf,0.7235,0.7502,-0.0323,-0.0184,
+unsw_nb15:binary,250,chain/L1/c0.3/rank,rbf_svm,0.7235,0.727,0.0002,0.0023,True
+unsw_nb15:binary,1000,star/L1/c0.6/top_to_high_degree,ceiling_xgb,0.7367,0.7933,-0.0734,-0.0533,
+unsw_nb15:binary,1000,star/L1/c0.6/top_to_high_degree,rbf_svm,0.7367,0.735,0.0039,0.0096,True
+unsw_nb15:binary,4000,ring/L2/c1.0/rank,ceiling_xgb,0.7452,0.7926,-0.0485,-0.0292,
+unsw_nb15:binary,4000,ring/L2/c1.0/rank,rbf_svm,0.7452,0.7334,0.0153,0.0274,True

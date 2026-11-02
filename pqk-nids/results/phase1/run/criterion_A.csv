@@ -1,0 +1,13 @@
+inputs,c,configs,r2_cone,r2_density,r2_both,partial_F_add_density,p_add_density,cell_pass
+fashion_mnist,0.3,96,0.078,0.004,0.178,11.425,0.0011,False
+fashion_mnist,0.6,96,0.001,0.17,0.274,35.078,0.0,False
+fashion_mnist,1.0,96,0.368,0.771,0.773,166.316,0.0,False
+gaussian,0.3,96,0.08,0.003,0.183,11.693,0.0009,False
+gaussian,0.6,96,0.003,0.216,0.32,43.227,0.0,False
+gaussian,1.0,96,0.35,0.776,0.777,177.84,0.0,False
+nf_unsw_nb15_v2,0.3,96,0.041,0.031,0.209,19.649,0.0,False
+nf_unsw_nb15_v2,0.6,96,0.022,0.107,0.334,43.665,0.0,False
+nf_unsw_nb15_v2,1.0,96,0.0,0.222,0.367,53.865,0.0,False
+unsw_nb15,0.3,96,0.068,0.008,0.183,13.162,0.0005,False
+unsw_nb15,0.6,96,0.002,0.196,0.304,40.434,0.0,False
+unsw_nb15,1.0,96,0.356,0.724,0.727,126.427,0.0,False
