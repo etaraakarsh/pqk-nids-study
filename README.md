@@ -2,7 +2,7 @@
 
 Code, frozen protocol files and results for the paper
 
-> A. Etar, J. Soni and H. Upadhyay, *Entangling structure shapes projected quantum kernels but rarely their accuracy*, submitted to *Quantum Machine Intelligence* (2026).
+> A. Etar, J. Soni, H. Upadhyay, A. Perez-Pons and A. Sarwat *Entangling structure shapes projected quantum kernels but rarely their accuracy*, submitted to *Quantum Machine Intelligence* (2026).
 
 The study asks which structural property of a quantum feature map controls how much each qubit of a projected quantum kernel still responds to the input, and whether that property predicts classification accuracy. It was run as a data audit and four preregistered stages on network intrusion detection data (NF-UNSW-NB15-v2, UNSW-NB15), with Fashion-MNIST as a control. Every hypothesis and threshold was frozen and hashed before the corresponding data were seen.
 
@@ -22,35 +22,35 @@ All quantum results come from exact (noiseless) statevector simulation. No quant
 
 ```
 pqk-nids-study/
-├── README.md                              this file
-├── DATA.md                                where to download the datasets and how to check them
-├── requirements.txt                       Python packages
+├── README.md                              
+├── DATA.md                                
+├── requirements.txt                       
 ├── LICENSE
 ├── CITATION.cff
 │
-├── phase0_data_and_baselines.ipynb        Data audit, MODE = "quick" (3 seeds). Its splits are the ones frozen in Stage 1
-├── phase0_full_data_and_baselines.ipynb   Same notebook, MODE = "full" (10 seeds, 17,220 classical runs reported in the paper)
-├── phase1_causal_cone_theory.ipynb        Stage 1, causal-cone hypothesis
-├── phase1b_degree_test.ipynb              Stage 2, coupling-degree hypothesis
-├── phase2_task_performance.ipynb          Stage 3, task performance of the ZZ map
-├── stage4_generalisation.ipynb            Stage 4, ten circuit families (parts A and B)
-├── pqk_circuits.py                        Circuit module used by Stage 4 (frozen, SHA-256 cc1c57ff…)
-├── freeze_phase1_inputs.py                Writes the Stage 1 freeze
-├── freeze_phase1b.py                      Writes the Stage 2 freeze
-├── freeze_phase2.py                       Writes the Stage 3 freeze
-├── freeze_stage4.py                       Writes the Stage 4 freeze
+├── phase0_data_and_baselines.ipynb        
+├── phase0_full_data_and_baselines.ipynb   
+├── phase1_causal_cone_theory.ipynb        
+├── phase1b_degree_test.ipynb              
+├── phase2_task_performance.ipynb          
+├── stage4_generalisation.ipynb            
+├── pqk_circuits.py                        
+├── freeze_phase1_inputs.py                
+├── freeze_phase1b.py                      
+├── freeze_phase2.py                       
+├── freeze_stage4.py                       
 │
 ├── figures/
-│   ├── paper_figures.ipynb                Redraws Figs. 3 and 6 to 11 from the result files
-│   ├── circuit_diagrams.ipynb             Redraws Figs. 4 and 5 from the simulated gate lists
-│   └── tikz/                              LaTeX sources of Figs. 1 and 2
+│   ├── paper_figures.ipynb                
+│   ├── circuit_diagrams.ipynb             
+│   └── tikz/                              
 │
-└── pqk-nids/                              Project root that the notebooks read and write
-    ├── phase1_freeze/                     Frozen protocol files and their .sha256 hashes
+└── pqk-nids/                              
+    ├── phase1_freeze/                     
     ├── phase1b_freeze/
     ├── phase2_freeze/
     ├── stage4_freeze/
-    ├── results/                           Every result file of every stage
+    ├── results/                           
     │   ├── phase0/{quick,full}/
     │   ├── phase1/{smoke,run}/
     │   ├── phase1b/{smoke,run}/
